@@ -1,4 +1,4 @@
-// Type definitions for React 16.0
+// Type definitions for React 15.6
 // Project: http://facebook.github.io/react/
 // Definitions by: Asana <https://asana.com>
 //                 AssureSign <http://www.assuresign.com>
@@ -12,7 +12,6 @@
 //                 Tanguy Krotoff <https://github.com/tkrotoff>
 //                 Dovydas Navickas <https://github.com/DovydasNavickas>
 //                 Stéphane Goetz <https://github.com/onigoetz>
-//                 Rich Seviora <https://github.com/richseviora>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.3
 
@@ -322,11 +321,6 @@ declare namespace React {
         componentWillUpdate?(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): void;
         componentDidUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>, prevContext: any): void;
         componentWillUnmount?(): void;
-        /**
-         * Catches exceptions generated in descendant components. Unhandled exceptions will cause
-         * the entire component tree to unmount.
-         */
-        componentDidCatch?(error: Error, errorInfo: ErrorInfo): void;
     }
 
     interface Mixin<P, S> extends ComponentLifecycle<P, S> {
@@ -3359,16 +3353,6 @@ declare namespace React {
         length: number;
         item(index: number): Touch;
         identifiedTouch(identifier: number): Touch;
-    }
-
-    //
-    // Error Interfaces
-    // ----------------------------------------------------------------------
-    interface ErrorInfo {
-        /**
-         * Captures which component contained the exception, and it's ancestors.
-         */
-        componentStack: string;
     }
 }
 
